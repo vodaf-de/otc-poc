@@ -123,7 +123,7 @@ otc-repo/
 Requirement: Python ≥ 3.11.
 
 ```bash
-git clone <repo-url> otc-repo && cd otc-repo
+git clone https://github.com/vodaf-de/otc-poc.git otc-poc && cd otc-poc
 
 make install                 # venv + dependencies
 .venv/bin/pip install -e .   # installs the local package (setup.py) in editable mode
@@ -151,13 +151,13 @@ Rebuild the demo book: `make seed` (adds `--reset`). Wipe the database: `make re
 **VS Code**
 
 ```bash
-git clone https://gitlab.com/trixauvex/x402-kit.git && cd x402-kit && code .
+git clone https://github.com/vodaf-de/otc-poc.git && cd otc-poc && code .
 ```
 
 **Cursor**
 
 ```bash
-git clone https://gitlab.com/trixauvex/x402-kit.git && cd x402-kit && cursor .
+git clone https://github.com/vodaf-de/otc-poc.git && cd otc-poc && cursor .
 ```
 
 ## 5. Demo accounts
