@@ -9,30 +9,6 @@
 
 ---
 
-## Quick Start
-
-Before running the application, you need to install the local package and its dependencies. The setup script handles the environment preparation.
-
-Open your terminal in the project root and run:
-
-```bash
-pip install -e .
-```
-
-(Note: the `-e .` flag installs the package in editable mode, which is required for the local CLI tools to function correctly.)
-
-Once the installation completes, you can start the server:
-
-```bash
-make run
-# or
-python run.py
-```
-
-The app will be available at `http://127.0.0.1:5055`.
-
----
-
 ## Table of contents
 
 1. [Overview](#1-overview)
@@ -150,6 +126,7 @@ Requirement: Python ≥ 3.11.
 git clone <repo-url> otc-repo && cd otc-repo
 
 make install                 # venv + dependencies
+.venv/bin/pip install -e .   # installs the local package (setup.py) in editable mode
 cp .env.example .env         # then edit SECRET_KEY
 make seed                    # creates tables + the demo book
 
@@ -158,6 +135,9 @@ make run                     # http://127.0.0.1:5055
 .venv/bin/gunicorn -w 1 -b 0.0.0.0:5055 wsgi:app
 ```
 
+The `-e .` flag installs the package in editable mode, which is required for the local CLI
+tools to work correctly. Run it before `make seed` and `make run`.
+
 `SECRET_KEY` must be unique per environment:
 
 ```bash
@@ -165,6 +145,20 @@ python3 -c "import secrets; print(secrets.token_hex(32))"
 ```
 
 Rebuild the demo book: `make seed` (adds `--reset`). Wipe the database: `make reset`.
+
+### Open it in your editor
+
+**VS Code**
+
+```bash
+git clone https://gitlab.com/trixauvex/x402-kit.git && cd x402-kit && code .
+```
+
+**Cursor**
+
+```bash
+git clone https://gitlab.com/trixauvex/x402-kit.git && cd x402-kit && cursor .
+```
 
 ## 5. Demo accounts
 
